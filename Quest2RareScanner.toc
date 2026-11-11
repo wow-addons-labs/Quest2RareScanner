@@ -2,7 +2,7 @@
 ## Title: Quest2RareScanner
 ## Notes: Alt+左键点击 Questie 世界地图图标，或使用任务日志的骷髅按钮，把 NPC 加入 RareScanner。
 ## Notes-enUS: Alt+left-click a Questie world map icon, or use the skull button in the quest log, to add NPCs to RareScanner.
-## Version: 0.1.0
+## Version: 0.1.1
 ## Author: Luomo
 ## X-License: MIT
 ## RequiredDeps: Questie, QuestieDB, RareScanner

@@ -5,7 +5,7 @@
 local ADDON_NAME, ns = ...
 
 local L = {
-    HELP_TITLE = "Quest2RareScanner 0.1.0",
+    HELP_TITLE = "Quest2RareScanner 0.1.1",
     HELP_MAP = "世界地图：Alt+左键点击 Questie 图标，把对应 NPC 加入 RareScanner。",
     HELP_GROUP = "NPC 会放进 Q2RS_<任务ID> 组；手动标记进 Q2RS_手动。",
     HELP_CMD = "/q2rs - 显示帮助和状态；/q2rs delete - 删除所有已添加的 NPC",

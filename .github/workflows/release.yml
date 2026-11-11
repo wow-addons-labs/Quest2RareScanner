@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Resolve version
         run: |
@@ -56,3 +58,22 @@ jobs:
           files: Quest2RareScanner-*.zip
           generate_release_notes: true
           fail_on_unmatched_files: true
+
+      - name: Commit version bump
+        run: |
+          BRANCH="${{ github.event.repository.default_branch }}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- Quest2RareScanner.toc Locale.lua; then
+            echo "Version already matches ${VERSION}."
+            exit 0
+          fi
+
+          git add Quest2RareScanner.toc Locale.lua
+          git commit -m "Bump version to ${VERSION}"
+
+          git fetch origin "${BRANCH}"
+          git rebase "origin/${BRANCH}"
+          git push origin "HEAD:${BRANCH}"
