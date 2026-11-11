@@ -1071,7 +1071,8 @@ local function CreateQuestLogDialog()
         if not row then
             row = CreateFrame("CheckButton", nil, content, "UICheckButtonTemplate")
             row:SetSize(18, 18)
-            row.label = content:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+            -- Parent the label to the row so it hides and shows with the checkbox.
+            row.label = row:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
             row.label:SetPoint("LEFT", row, "RIGHT", 4, 0)
             row.label:SetWidth(290)
             row.label:SetJustifyH("LEFT")
